@@ -9,6 +9,8 @@ public class NewBehaviourScript : MonoBehaviour
     public PlayableDirector timeline1;
     public PlayableDirector timeline2;
 
+    public MeshRenderer mesh;
+
     public int keys;
     public bool OneTimeTrigger = false;
 
@@ -26,6 +28,7 @@ public class NewBehaviourScript : MonoBehaviour
                     {
                         Destroy(this.gameObject);
                     }
+                    Debug.Log("No keys left");
                     break;
                 default:
                     timeline2.Play();
@@ -34,6 +37,7 @@ public class NewBehaviourScript : MonoBehaviour
                     {
                         Destroy(this.gameObject);
                     }
+                    Debug.Log("Some keys left");
                     break;
             }
 
@@ -41,6 +45,16 @@ public class NewBehaviourScript : MonoBehaviour
     }
     public void KeyMinus()
     {
-        keys--;
+        keys -= 1;
+        Debug.Log(keys);
+    }
+    public void Exit()
+    {
+        Debug.Log("Quit");
+        Application.Quit();
+    }
+    public void MeshDisable()
+    {
+        mesh.enabled = false;
     }
 }
