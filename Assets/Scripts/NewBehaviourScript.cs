@@ -19,6 +19,7 @@ public class NewBehaviourScript : MonoBehaviour
         
         if (other.gameObject.tag == "Player")
         {
+            mesh.enabled = false;
             switch (keys)
             {
                 case 0:
